@@ -1,3 +1,5 @@
+// See the lines starting from app.get(<some end point>) to see the functionality of the end point
+
 const express = require("express");
 const Cryptr = require('cryptr');
 const bp = require('body-parser')
