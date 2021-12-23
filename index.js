@@ -15,7 +15,7 @@ app.use(bp.urlencoded({ extended: true }))
 app.get('/users', (req, res) => {
     res.header({"Access-Control-Allow-Origin": "*"})
     var MongoClient = require('mongodb').MongoClient
-    var url = "mongodb://localhost:27017/"
+    var url = "mongodb+srv://admin:admin@userauth-and-favourites.1y2bz.mongodb.net/UserAuthDB?retryWrites=true&w=majority"
     const databasename = "UserAuthDB"
     MongoClient.connect(url).then((client) => {
         const connect = client.db(databasename)
@@ -31,7 +31,7 @@ app.get('/users', (req, res) => {
 
 app.post('/register', (req, res) => {
     var MongoClient = require('mongodb').MongoClient
-    var url = "mongodb://localhost:27017/"
+    var url = "mongodb+srv://admin:admin@userauth-and-favourites.1y2bz.mongodb.net/UserAuthDB?retryWrites=true&w=majority"
     const databasename = "UserAuthDB"
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
@@ -71,7 +71,7 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
     res.header({"Access-Control-Allow-Origin": "*"})
     var MongoClient = require('mongodb').MongoClient
-    var url = "mongodb://localhost:27017/"
+    var url = "mongodb+srv://admin:admin@userauth-and-favourites.1y2bz.mongodb.net/UserAuthDB?retryWrites=true&w=majority"
     const databasename = "UserAuthDB"
     var username = req.body.username
     var password = req.body.password
@@ -98,7 +98,7 @@ app.post('/login', (req, res) => {
 app.get('/favourite', (req, res) => {
     res.header({"Access-Control-Allow-Origin": "*"})
     var MongoClient = require('mongodb').MongoClient
-    var url = "mongodb://localhost:27017/"
+    var url = "mongodb+srv://admin:admin@userauth-and-favourites.1y2bz.mongodb.net/UserAuthDB?retryWrites=true&w=majority"
     const databasename = "UserAuthDB"
     var username = req.query.username
     var movie = req.query.movie
@@ -125,7 +125,7 @@ app.get('/favourite', (req, res) => {
 app.get('/unfavourite', (req, res) => {
     res.header({"Access-Control-Allow-Origin": "*"})
     var MongoClient = require('mongodb').MongoClient
-    var url = "mongodb://localhost:27017/"
+    var url = "mongodb+srv://admin:admin@userauth-and-favourites.1y2bz.mongodb.net/UserAuthDB?retryWrites=true&w=majority"
     const databasename = "UserAuthDB"
     var username = req.query.username
     var movie = req.query.movie
@@ -152,7 +152,7 @@ app.get('/unfavourite', (req, res) => {
 app.get('/favourites-list', (req, res) => {
     res.header({"Access-Control-Allow-Origin": "*"})
     var MongoClient = require('mongodb').MongoClient
-    var url = "mongodb://localhost:27017/"
+    var url = "mongodb+srv://admin:admin@userauth-and-favourites.1y2bz.mongodb.net/UserAuthDB?retryWrites=true&w=majority"
     const databasename = "UserAuthDB"
 
     MongoClient.connect(url, function(err, db) {
